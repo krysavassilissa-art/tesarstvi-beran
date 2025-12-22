@@ -2,159 +2,146 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Tesařství Beran | Dřevo je náš život</title>
+<title>Tesařství BERAN | Projekty tvořené srdcem</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tesařství Beran – projekty tvořené srdcem, nápady vymyšlené hlavou. Krovy, pergoly, terasy, zahradní domky.">
+<meta name="description" content="Tesařství BERAN – projekty tvořené srdcem, nápady vymyšlené hlavou. Tesařské práce, pergoly, střechy, konstrukce.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+/* ===================================================
+   ZÁKLADNÍ RESET
+=================================================== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{line-height:1.7;color:#222}
+a{color:inherit;text-decoration:none}
 
-/* NAV */
+/* ===================================================
+   NAVIGACE
+=================================================== */
 nav{
-position:fixed;top:0;width:100%;
-background:#111;color:#fff;
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 30px;z-index:1000
+  position:fixed;top:0;left:0;width:100%;
+  background:#111;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:15px 30px;z-index:1000;
 }
-nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold}
-nav a:hover{text-decoration:underline}
+nav .logo img{height:45px;transition:.3s}
+nav .menu a{margin-left:22px;font-weight:bold;cursor:pointer}
+nav .menu a:hover{opacity:.8}
 
-/* HERO */
+/* ===================================================
+   HERO (ÚVOD)
+=================================================== */
 .hero{
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url("https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=1600&q=80")
-center/cover no-repeat;
-min-height:100vh;
-display:flex;align-items:center;
-padding:130px 40px 40px
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("images/hero.webp") center/cover no-repeat;
+  min-height:95vh;display:flex;align-items:center;
+  padding:120px 30px 50px;
 }
-.hero-content{max-width:760px;color:#fff}
-.hero h1{font-size:clamp(2.4rem,5vw,3.4rem);margin-bottom:10px}
-.hero h2{font-weight:300;margin-bottom:20px}
-.hero p{font-size:1.15rem}
-.hero-buttons{margin-top:30px}
+.hero-content{max-width:780px;color:#fff}
+.hero h1{font-size:clamp(2.2rem,5vw,3rem);margin-bottom:10px}
+.hero h2{font-weight:300;margin-bottom:18px}
+.hero p{font-size:1.1rem}
+.hero .btn{display:inline-block;padding:14px 28px;margin-top:22px;border-radius:28px;font-weight:bold;
+  transition:.3s}
+.hero .primary{background:#8b5a2b;color:#fff}
+.hero .primary:hover{background:#73451f}
+.hero .secondary{border:2px solid #fff;color:#fff}
+.hero .secondary:hover{background:#fff;color:#000}
 
-/* BUTTONS */
-.btn{
-display:inline-block;padding:15px 26px;
-margin:10px 12px 0 0;
-text-decoration:none;font-weight:bold;
-border-radius:30px;transition:.25s
-}
-.primary{background:#8b5a2b;color:#fff}
-.primary:hover{background:#73451f}
-.secondary{border:2px solid #fff;color:#fff}
-.secondary:hover{background:#fff;color:#000}
-
-/* LAYOUT */
-section{padding:100px 20px}
+/* ===================================================
+   SEKCÍ
+=================================================== */
+section{padding:90px 18px}
 .container{max-width:1100px;margin:auto}
-h3{font-size:2.2rem;margin-bottom:25px}
-.subheading{font-size:1.2rem;font-weight:bold;margin-bottom:20px}
 
-/* REALIZACE */
+/* ===================================================
+   REALIZACE
+=================================================== */
 .realizace{background:#f7f7f7}
-.realizace-item{
-background:#fff;
-padding:25px;
-margin-bottom:50px;
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,.1)
+.realizace .item{
+  background:#fff;padding:25px;margin-bottom:45px;
+  border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.1);
 }
-.realizace-item h4{
-font-size:1.6rem;
-margin-bottom:15px;
-color:#8b5a2b
+.realizace .item h4{font-size:1.4rem;color:#8b5a2b;margin-bottom:12px}
+.realizace .gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;margin-bottom:18px;
 }
+.realizace .gallery img{
+  width:100%;height:170px;object-fit:cover;border-radius:8px;
+  cursor:pointer;transition:.3s
+}
+.realizace .gallery img:hover{transform:scale(1.03)}
 
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-margin-bottom:20px
-}
-.gallery img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:8px;
-cursor:pointer;
-transition:.3s
-}
-.gallery img:hover{transform:scale(1.03)}
+/* ===================================================
+   O NÁS
+=================================================== */
+.about .subheading{font-size:1.25rem;font-weight:bold;margin-bottom:16px}
 
-/* ABOUT */
-.about p{max-width:900px;margin-bottom:20px}
-
-/* CONTACT */
-.contact-info p{margin-bottom:10px}
-.contact-info a{color:#222;text-decoration:none;font-weight:bold}
-form{max-width:520px;margin-top:30px}
-input,textarea{
-width:100%;padding:16px;margin-bottom:15px;
-border:1px solid #ccc;font-size:1rem
+/* ===================================================
+   KONTAKT
+=================================================== */
+.contact-info p{margin-bottom:10px;font-size:1rem}
+.contact form input,
+.contact form textarea{
+  width:100%;padding:14px;border:1px solid #bbb;margin-bottom:14px;
+  border-radius:6px;font-size:1rem
 }
-textarea{min-height:140px}
-button{
-width:100%;padding:16px;
-background:#8b5a2b;color:#fff;
-border:none;font-size:1.1rem;
-font-weight:bold;border-radius:30px;cursor:pointer
+.contact form button{
+  background:#8b5a2b;color:#fff;border:none;padding:14px;
+  font-size:1.1rem;border-radius:28px;cursor:pointer
 }
-button:hover{background:#73451f}
+.contact form button:hover{background:#73451f}
 
-/* FOOTER */
-footer{
-background:#111;color:#fff;text-align:center;
-padding:30px;font-size:.9rem
-}
+/* ===================================================
+   FOOTER
+=================================================== */
+footer{background:#111;color:#fff;text-align:center;padding:28px;font-size:.95rem}
+footer .footer-logo{height:50px;margin-bottom:12px}
 
-/* STICKY CTA */
-.sticky-cta{
-position:fixed;right:20px;bottom:20px;
-background:#8b5a2b;color:#fff;
-padding:15px 22px;border-radius:40px;
-text-decoration:none;font-weight:bold;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
-z-index:2000
-}
-.sticky-cta:hover{background:#73451f}
+/* ===================================================
+   FIX PRO KOTVU NAV
+=================================================== */
+:root{--nav-height:80px}
+#uvod,#realizace,#onas,#kontakt{scroll-margin-top:var(--nav-height)}
 
-/* LIGHTBOX */
+/* ===================================================
+   SMOOTH SCROLL
+=================================================== */
+html{scroll-behavior:smooth}
+
+/* ===================================================
+   LIGHTBOX
+=================================================== */
 .lightbox{
-position:fixed;inset:0;
-background:rgba(0,0,0,.85);
-display:flex;align-items:center;justify-content:center;
-z-index:3000
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;align-items:center;justify-content:center;
+  z-index:3000;
 }
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px
-}
+.lightbox img{max-width:92%;max-height:92%;border-radius:8px}
 .lightbox:after{
-content:"✕";
-position:absolute;
-top:20px;right:30px;
-font-size:2rem;color:#fff;
-cursor:pointer
+  content:"✕";position:absolute;top:20px;right:30px;
+  font-size:2rem;color:#fff;cursor:pointer
 }
 
-/* MOBILE */
+/* ===================================================
+   MOBILE ÚPRAVY
+=================================================== */
 @media(max-width:700px){
-.hero{padding:150px 20px 40px}
-.hero-buttons .btn{display:block;width:100%;text-align:center}
+  .hero{padding:140px 18px 50px}
+  nav .menu a{margin-left:14px;font-size:.95rem}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <strong>Tesařství BERAN</strong>
-  <div>
+  <div class="logo">
+    <img src="images/logo.webp" alt="Tesařství BERAN logo">
+  </div>
+  <div class="menu">
     <a href="#uvod">Úvod</a>
     <a href="#realizace">Realizace</a>
     <a href="#onas">O nás</a>
@@ -162,51 +149,51 @@ cursor:pointer
   </div>
 </nav>
 
-<a href="#kontakt" class="sticky-cta">Pošlete poptávku</a>
-
 <!-- ÚVOD -->
 <header id="uvod" class="hero">
   <div class="hero-content">
     <h1>PROJEKTY TVOŘENÉ SRDCEM</h1>
     <h2>NÁPADY VYMYŠLENÉ HLAVOU</h2>
-    <p>Kvalita, preciznost a poctivá práce jsou pro nás samozřejmostí.</p>
-    <div class="hero-buttons">
-      <a href="#kontakt" class="btn primary">Pošlete nezávaznou poptávku</a>
-      <a href="#kontakt" class="btn secondary">Kontaktujte nás</a>
-    </div>
+
+    <!-- původní text z úvodu -->
+    <p>
+      Každý náš projekt je výsledkem pečlivé práce a použití kvalitních materiálů od osvědčených a prověřených dodavatelů. Dbáme na každý detail, protože víme, jak důležitá je preciznost pro dlouhou životnost a funkčnost. Naším cílem je zajistit, aby každý výsledek splnil vaše očekávání a byl zpracován s maximální profesionalitou a odpovědností. :contentReference[oaicite:1]{index=1}
+    </p>
+
+    <a href="#kontakt" class="btn primary">Pošlete nezávaznou poptávku</a>
+    <a href="#kontakt" class="btn secondary">Kontaktujte nás</a>
   </div>
 </header>
 
 <!-- REALIZACE -->
 <section id="realizace" class="realizace">
   <div class="container">
-    <h3>Realizace</h3>
+    <h3>Realizované projekty</h3>
 
-    <div class="realizace-item">
+    <!-- Projekt 1 -->
+    <div class="item">
       <h4>Garážové stání pro 2 auta</h4>
       <div class="gallery">
         <img src="images/realizace/garaz1.webp" alt="Garážové stání" loading="lazy" onclick="openLightbox(this)">
         <img src="images/realizace/garaz2.webp" alt="Garážové stání detail" loading="lazy" onclick="openLightbox(this)">
-        <img src="images/realizace/garaz3.webp" alt="Garážové stání černobílá" loading="lazy" onclick="openLightbox(this)">
       </div>
       <p><strong>Materiál:</strong> Hoblované smrkové dřevo z místní pily.</p>
-      <p><strong>Požadavek investora:</strong> Zhotovení hrubé stavby garážového stání pro dva osobní automobily včetně vizualizace pro stavební úřad.</p>
-      <p><strong>Realizace:</strong> Projekt byl přizpůsoben již nakoupenému materiálu investora. Samotná stavba konstrukce proběhla během dvou dnů.</p>
+      <p><strong>Požadavek investora:</strong> Majitelé nás oslovili s prosbou o zhotovení hrubé stavby garážového stání pro dva osobní automobily. Součástí projektu byla i vytvoření vizualizace s okótováním pro místní stavební úřad. :contentReference[oaicite:2]{index=2}</p>
+      <p><strong>Realizace:</strong> Projekt byl přizpůsoben materiálu investora a provedena samotná stavba konstrukce během dvou dnů.</p>
     </div>
 
-    <div class="realizace-item">
+    <!-- Projekt 2 -->
+    <div class="item">
       <h4>Střecha na zahradní domek</h4>
       <div class="gallery">
-        <img src="images/realizace/strecha1.webp" alt="Střecha na zahradní domek" loading="lazy" onclick="openLightbox(this)">
-        <img src="images/realizace/strecha2.webp" alt="Střecha detail" loading="lazy" onclick="openLightbox(this)">
-        <img src="images/realizace/strecha3.webp" alt="Střecha hotová" loading="lazy" onclick="openLightbox(this)">
+        <img src="images/realizace/strecha1.webp" alt="Zahradní domek střecha" loading="lazy" onclick="openLightbox(this)">
+        <img src="images/realizace/strecha2.webp" alt="Zahradní domek detail" loading="lazy" onclick="openLightbox(this)">
       </div>
-      <p><strong>Materiál:</strong> Hoblované smrkové dřevo, impregnace Lignofix, lazura Remmers HK-LASUR – Teak, krytina Blachdom Atractiv RAL 3009.</p>
-      <p><strong>Požadavek investora:</strong> Zastřešení zahradního domku s úpravami původního návrhu – rozšíření půdorysu a přetažení střechy.</p>
-      <p><strong>Realizace:</strong> Projekt byl upraven dle požadavků klienta a realizován podle nové specifikace.</p>
+      <p><strong>Materiál:</strong> Hoblované smrkové dřevo, impregnace Lignofix, pohledové trámy natřené lazurou Remmers HK-LASUR – Teak, krytina Blachdom Atractiv RAL 3009. :contentReference[oaicite:3]{index=3}</p>
+      <p><strong>Požadavek investora:</strong> Zastřešit zahradní domek s několika úpravami původního návrhu.</p>
+      <p><strong>Realizace:</strong> Projekt byl upraven podle požadavků klienta a realizován dle nové specifikace.</p>
     </div>
 
-    <a href="#kontakt" class="btn primary">Chci podobnou realizaci</a>
   </div>
 </section>
 
@@ -215,9 +202,15 @@ cursor:pointer
   <div class="container">
     <h3>O nás</h3>
     <div class="subheading">Dřevo je náš život</div>
-    <p>Specializujeme se na širokou škálu tesařských prací, od pevně postavených střešních konstrukcí až po stylové zahradní domky, pergoly a terasy.</p>
-    <p>Každý projekt je pro nás příležitostí prokázat naši odbornost a preciznost. K práci přistupujeme s maximální pečlivostí.</p>
-    <p>Používáme pouze kvalitní materiály a spolupracujeme s osvědčenými dodavateli. Vaše spokojenost a dlouhá životnost našich výrobků jsou pro nás prioritou.</p>
+    <p>
+      Specializujeme se na širokou škálu tesařských prací, od pevně postavených střešních konstrukcí až po stylové zahradní domky, pergoly a terasy, které dotvářejí krásu každého exteriéru. :contentReference[oaicite:4]{index=4}
+    </p>
+    <p>
+      Každý projekt je pro nás příležitostí prokázat naši odbornost a preciznost. K práci přistupujeme s maximální pečlivostí, protože víme, jak důležitá je dlouhá životnost a funkčnost každé konstrukce. :contentReference[oaicite:5]{index=5}
+    </p>
+    <p>
+      Používáme pouze kvalitní materiály, které jsou prověřené a odolné, a spolupracujeme s osvědčenými dodavateli, na které se můžeme spolehnout. Vaše spokojenost a dlouhá životnost našich tesařských výrobků jsou pro nás nejvyšší prioritou. :contentReference[oaicite:6]{index=6}
+    </p>
   </div>
 </section>
 
@@ -225,14 +218,12 @@ cursor:pointer
 <section id="kontakt" class="contact">
   <div class="container">
     <h3>Kontakt</h3>
-    <p>Poptávka je nezávazná. Odpovídáme co nejdříve.</p>
-
+    <p>Těšíme se na vaši návštěvu – neváhejte nás kontaktovat! :contentReference[oaicite:7]{index=7}</p>
     <div class="contact-info">
-      <p><strong>Adresa:</strong> Lovecká 2889/48, 466 01 Jablonec nad Nisou</p>
+      <p><strong>Adresa:</strong> Lovecká 2889/48, Jablonec nad Nisou 46601</p>
       <p><strong>Telefon:</strong> <a href="tel:+420736743118">+420 736 743 118</a></p>
       <p><strong>E-mail:</strong> <a href="mailto:beran.tesarstvi@gmail.com">beran.tesarstvi@gmail.com</a></p>
     </div>
-
     <form>
       <input type="text" placeholder="Vaše jméno" required>
       <input type="email" placeholder="E-mail" required>
@@ -243,16 +234,18 @@ cursor:pointer
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © Tesařství Beran
+  <img src="images/logo.webp" alt="Tesařství BERAN logo" class="footer-logo">
+  © Tesařství BERAN
 </footer>
 
 <script>
 function openLightbox(img){
-  const lb=document.createElement("div");
-  lb.className="lightbox";
-  lb.innerHTML=`<img src="${img.src}">`;
-  lb.onclick=()=>lb.remove();
+  const lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.innerHTML = `<img src="${img.src}">`;
+  lb.onclick = () => lb.remove();
   document.body.appendChild(lb);
 }
 </script>
