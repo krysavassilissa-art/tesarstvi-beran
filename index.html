@@ -207,14 +207,50 @@ button{
 button:hover{background:#73451f}
 
 /* ===== FOOTER ===== */
-footer{
+.footer{
   background:#fff;
+  padding:80px 20px 50px;
   text-align:center;
-  padding:60px 20px;
 }
-footer img{
-  height:64px;
-  margin-bottom:20px;
+.footer-inner{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+.footer-logo{
+  height:70px;
+}
+.footer-text{
+  font-size:1.05rem;
+  line-height:1.6;
+}
+.footer-contact a{
+  font-weight:600;
+}
+.footer-social a{
+  color:var(--brand);
+  font-weight:700;
+}
+.footer-map{
+  width:100%;
+  max-width:700px;
+  margin:30px auto 10px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+.footer-map iframe{
+  width:100%;
+  height:300px;
+  border:0;
+}
+.footer-copy{
+  font-size:.9rem;
+  opacity:.7;
+  margin-top:20px;
 }
 
 /* ===== LIGHTBOX ===== */
@@ -248,6 +284,7 @@ footer img{
   .hero{padding:180px 24px 80px}
   section{padding:90px 20px}
   .realizace-item{padding:30px}
+  .footer-map iframe{height:220px}
 }
 </style>
 </head>
@@ -369,9 +406,36 @@ footer img{
   </div>
 </section>
 
-<footer>
-  <img src="images/logo.webp" alt="Tesařství BERAN">
-  © Tesařství BERAN
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="images/logo.webp" alt="Tesařství BERAN" class="footer-logo">
+
+    <p class="footer-text">
+      Tesařství BERAN<br>
+      Lovecká 2889/48, 466 01 Jablonec nad Nisou
+    </p>
+
+    <p class="footer-contact">
+      <a href="tel:+420736743118">+420&nbsp;736&nbsp;743&nbsp;118</a><br>
+      <a href="mailto:beran.tesarstvi@gmail.com">beran.tesarstvi@gmail.com</a>
+    </p>
+
+    <p class="footer-social">
+      <a href="https://www.instagram.com/beran_na_strese/" target="_blank" rel="noopener">
+        Instagram: @beran_na_strese
+      </a>
+    </p>
+
+    <div class="footer-map">
+      <iframe
+        src="https://www.google.com/maps?q=Loveck%C3%A1%202889%2F48%2C%20Jablonec%20nad%20Nisou&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="footer-copy">© Tesařství BERAN</p>
+  </div>
 </footer>
 
 <script>
