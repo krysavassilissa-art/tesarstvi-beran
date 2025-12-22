@@ -9,20 +9,20 @@
 :root{
   --brand:#8b5a2b;
   --dark:#111;
-  --light:#fafafa;
+  --light:#f3f3f3;
   --text:#222;
   --nav-height:88px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   color:var(--text);
   line-height:1.7;
-  background:var(--light);
+  background:#fff;
 }
 a{text-decoration:none;color:inherit}
-html{scroll-behavior:smooth}
 
 /* ===== NAV ===== */
 nav{
@@ -115,7 +115,7 @@ section h3{
 
 /* ===== REALIZACE ===== */
 .realizace{
-  background:#f3f3f3;
+  background:var(--light);
 }
 .realizace-item{
   background:#fff;
@@ -145,7 +145,6 @@ section h3{
 }
 .gallery img:hover{transform:scale(1.04)}
 
-/* accordion */
 .accordion details{
   margin-bottom:26px;
   border-left:5px solid var(--brand);
@@ -160,7 +159,7 @@ section h3{
   margin-bottom:10px;
 }
 
-/* ===== ABOUT ===== */
+/* ===== O NÁS ===== */
 .about{
   background:#fff;
 }
@@ -174,9 +173,9 @@ section h3{
   margin-bottom:20px;
 }
 
-/* ===== CONTACT ===== */
+/* ===== KONTAKT ===== */
 .contact{
-  background:#f3f3f3;
+  background:var(--light);
 }
 .contact-info p{
   margin-bottom:12px;
@@ -255,6 +254,7 @@ footer img{
 
 <body>
 
+<!-- NAV -->
 <nav>
   <img src="images/logo.webp" alt="Tesařství BERAN">
   <div class="menu">
@@ -265,11 +265,16 @@ footer img{
   </div>
 </nav>
 
+<!-- HERO -->
 <header id="uvod" class="hero">
   <div class="hero-content">
     <h1>PROJEKTY TVOŘENÉ SRDCEM</h1>
     <h2>NÁPADY VYMYŠLENÉ HLAVOU</h2>
-    <p>Každý náš projekt je výsledkem pečlivé práce a použití kvalitních materiálů od osvědčených a prověřených dodavatelů.</p>
+    <p>
+      Každý náš projekt je výsledkem pečlivé práce a použití kvalitních materiálů
+      od osvědčených a prověřených dodavatelů. Dbáme na každý detail, protože víme,
+      jak důležitá je preciznost pro dlouhou životnost a funkčnost.
+    </p>
     <div class="actions">
       <a href="#kontakt" class="btn primary">Nezávazná poptávka</a>
       <a href="#realizace" class="btn secondary">Naše realizace</a>
@@ -277,7 +282,97 @@ footer img{
   </div>
 </header>
 
-<!-- ZBYTEK STRÁNKY ZŮSTÁVÁ STEJNÝ JAKO PŘEDTÍM -->
+<!-- REALIZACE -->
+<section id="realizace" class="realizace">
+  <div class="container">
+    <h3>Realizace</h3>
+
+    <div class="realizace-item">
+      <h4>Garážové stání pro 2 auta</h4>
+      <div class="gallery">
+        <img src="images/realizace/garaz1.webp" onclick="openLightbox(this)">
+        <img src="images/realizace/garaz2.webp" onclick="openLightbox(this)">
+      </div>
+      <div class="accordion">
+        <details open>
+          <summary>MATERIÁL</summary>
+          <p>Hoblované smrkové dřevo z místní pily.</p>
+        </details>
+        <details>
+          <summary>POŽADAVEK INVESTORA</summary>
+          <p>Majitelé se na nás obrátili s prosbou o zhotovení „hrubé“ stavby garážového stání pro dva osobní automobily. Součástí projektu bylo i vytvoření vizualizace s okótováním pro místní stavební úřad. Začátkem projektu byl náčrt od investora na kousku odtrženého papírku.</p>
+        </details>
+        <details>
+          <summary>REALIZACE</summary>
+          <p>Jelikož měl investor již nakoupenou část materiálu (na špatnou radu původního realizátora), musel se projekt přizpůsobit právě tomu. Po vyhotovení vizualizace a schválení na místním stavebním úřadu mohl projekt přejít do prací se dřevem. Doobjednání materiálu proběhlo bez problému a než jej dodavatel připravil, mohla začít příprava patek, hoblování a vyřezávání. Dodání zbylého řeziva trvalo zhruba týden a samotná stavba konstrukce trvala dva dny – od tmy do tmy. Hotova je hrubá stavba, kterou si klient může dále dokončit (nátěry, pobití prkny, folie, okapy a krytina).</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="realizace-item">
+      <h4>Střecha na zahradní domek</h4>
+      <div class="gallery">
+        <img src="images/realizace/strecha1.webp" onclick="openLightbox(this)">
+        <img src="images/realizace/strecha2.webp" onclick="openLightbox(this)">
+      </div>
+      <div class="accordion">
+        <details open>
+          <summary>MATERIÁL</summary>
+          <p>Hoblované smrkové dřevo z místní pily doplněné o impregnaci přípravkem Lignofix. Pohledové trámy dvakrát natřeny tenkovrstvou lazurou Remmers HK-LASUR – Teak. Krytina – Blachdom atractiv RAL 3009.</p>
+        </details>
+        <details>
+          <summary>POŽADAVEK INVESTORA</summary>
+          <p>„Potřebujeme zastřešit náš zahradní domek o půdorysu 9×6 m, ale bude pár odchylek od původního projektu.“<br>
+          – Odchylka 1: domek nebude 9×6 m, ale 9,5×6 m<br>
+          – Odchylka 2: zastřešení bude přetaženo cca 4 m přes půdorys domku<br>
+          – Odchylka 3: z původního projektu byl zrušen druhý věnec a sklon střechy zvýšen z 35° na 40°<br>
+          Řešení? Zahodit původní projekt a začít znovu.</p>
+        </details>
+        <details>
+          <summary>REALIZACE</summary>
+          <p>Projekt byl upraven podle požadavků zákazníka tak, aby výsledná stavba co nejvíce odpovídala tomu, co bylo původně navrženo. Součástí tohoto procesu bylo vytvoření vizualizace a doladění všech detailů ve spolupráci se zákazníkem.</p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- O NÁS -->
+<section id="onas" class="about">
+  <div class="container">
+    <h3>O nás</h3>
+    <div class="sub">Dřevo je náš život</div>
+    <p>Specializujeme se na širokou škálu tesařských prací, od pevně postavených střešních konstrukcí až po stylové zahradní domky, pergoly a terasy, které dotvářejí krásu každého exteriéru.</p>
+    <p>Každý projekt je pro nás příležitostí prokázat naši odbornost a preciznost. K práci přistupujeme s maximální pečlivostí, protože víme, jak důležitá je dlouhá životnost a funkčnost každé konstrukce.</p>
+    <p>Používáme pouze kvalitní materiály, které jsou prověřené a odolné, a spolupracujeme s osvědčenými dodavateli, na které se můžeme spolehnout. Vaše spokojenost a dlouhá životnost našich tesařských výrobků jsou pro nás tou nejvyšší prioritou.</p>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="contact">
+  <div class="container">
+    <h3>Kontakt</h3>
+    <p>Poptávka je nezávazná. Odpovídáme co nejdříve.</p>
+    <div class="contact-info">
+      <p><strong>Adresa:</strong> Lovecká 2889/48, 466 01 Jablonec nad Nisou</p>
+      <p><strong>Telefon:</strong> <a href="tel:+420736743118">+420 736 743 118</a></p>
+      <p><strong>E-mail:</strong> <a href="mailto:beran.tesarstvi@gmail.com">beran.tesarstvi@gmail.com</a></p>
+    </div>
+    <form>
+      <input type="text" placeholder="Vaše jméno" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" placeholder="Telefon">
+      <textarea placeholder="Popište váš projekt"></textarea>
+      <button type="submit">Odeslat poptávku</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <img src="images/logo.webp" alt="Tesařství BERAN">
+  © Tesařství BERAN
+</footer>
 
 <script>
 function openLightbox(img){
