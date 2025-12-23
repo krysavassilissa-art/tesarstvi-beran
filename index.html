@@ -15,7 +15,6 @@
   --text:#222;
   --nav-height:88px;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -119,7 +118,7 @@ section h3{
 
 /* ===== IMAGE DIVIDER ===== */
 .image-divider{
-  height:420px;
+  height:380px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -227,6 +226,31 @@ button:hover{background:#73451f}
   border:0;
 }
 
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:3000;
+}
+.lightbox img{
+  max-width:92%;
+  max-height:92%;
+  border-radius:20px;
+}
+.lightbox:after{
+  content:"✕";
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:2.5rem;
+  color:#fff;
+  cursor:pointer;
+}
+
 /* ===== MOBILE ===== */
 @media(max-width:700px){
   nav .menu{display:none}
@@ -237,6 +261,7 @@ button:hover{background:#73451f}
 
 <body>
 
+<!-- NAV -->
 <nav>
   <img src="images/logo.webp" alt="Tesařství BERAN" loading="lazy">
   <div class="menu">
@@ -247,11 +272,16 @@ button:hover{background:#73451f}
   </div>
 </nav>
 
+<!-- HERO -->
 <header id="uvod" class="hero">
   <div class="hero-content">
-    <h1>Poctivé tesařství ze dřeva</h1>
-    <h2>Projekty tvořené srdcem a precizností</h2>
-    <p>Každý projekt je výsledkem pečlivé práce, kvalitních materiálů a důrazu na detail.</p>
+    <h1>PROJEKTY TVOŘENÉ SRDCEM</h1>
+    <h2>NÁPADY VYMYŠLENÉ HLAVOU</h2>
+    <p>
+      Každý náš projekt je výsledkem pečlivé práce a použití kvalitních materiálů
+      od osvědčených a prověřených dodavatelů. Dbáme na každý detail, protože víme,
+      jak důležitá je preciznost pro dlouhou životnost a funkčnost.
+    </p>
     <div class="actions">
       <a href="#kontakt" class="btn primary">Nezávazná poptávka</a>
       <a href="#realizace" class="btn secondary">Naše realizace</a>
@@ -259,12 +289,134 @@ button:hover{background:#73451f}
   </div>
 </header>
 
-<div class="image-divider" style="background-image:url('images/detail.webp')">
+<!-- IMAGE DIVIDER -->
+<div class="image-divider" style="background-image:url('images/divider1.webp')">
   <span>Pečlivost v každém detailu</span>
 </div>
 
-<!-- ❗ REALIZACE, O NÁS, KONTAKT – BEZE ZMĚN OBSAHU
-     pouze doplněno loading="lazy" ke všem <img> (viz výše) -->
+<!-- REALIZACE -->
+<section id="realizace" class="realizace">
+  <div class="container">
+    <h3>Realizace</h3>
+
+    <div class="realizace-item">
+      <h4>Garážové stání pro 2 auta</h4>
+      <div class="gallery">
+        <img src="images/realizace/garaz1.webp" onclick="openLightbox(this)" loading="lazy">
+        <img src="images/realizace/garaz2.webp" onclick="openLightbox(this)" loading="lazy">
+      </div>
+      <div class="accordion">
+        <details open>
+          <summary>MATERIÁL</summary>
+          <p>Hoblované smrkové dřevo z místní pily.</p>
+        </details>
+        <details>
+          <summary>POŽADAVEK INVESTORA</summary>
+          <p>Majitelé se na nás obrátili s prosbou o zhotovení …</p>
+        </details>
+        <details>
+          <summary>REALIZACE</summary>
+          <p>Jelikož měl investor již nakoupenou část materiálu …</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="realizace-item">
+      <h4>Střecha na zahradní domek</h4>
+      <div class="gallery">
+        <img src="images/realizace/strecha1.webp" onclick="openLightbox(this)" loading="lazy">
+        <img src="images/realizace/strecha2.webp" onclick="openLightbox(this)" loading="lazy">
+      </div>
+      <div class="accordion">
+        <details open>
+          <summary>MATERIÁL</summary>
+          <p>Hoblované smrkové dřevo doplněné o impregnaci …</p>
+        </details>
+        <details>
+          <summary>POŽADAVEK INVESTORA</summary>
+          <p>„Potřebujeme zastřešit náš zahradní domek …“</p>
+        </details>
+        <details>
+          <summary>REALIZACE</summary>
+          <p>Projekt byl upraven podle požadavků zákazníka …</p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMAGE DIVIDER -->
+<div class="image-divider" style="background-image:url('images/divider2.webp')">
+  <span>Kvalita, která vydrží roky</span>
+</div>
+
+<!-- O NÁS -->
+<section id="onas" class="about">
+  <div class="container">
+    <h3>O nás</h3>
+    <div class="sub">Dřevo je náš život</div>
+    <p>Specializujeme se na širokou škálu tesařských prací …</p>
+    <p>Každý projekt je pro nás příležitostí prokázat naši odbornost …</p>
+    <p>Používáme pouze kvalitní materiály, které jsou prověřené …</p>
+  </div>
+</section>
+
+<!-- IMAGE DIVIDER -->
+<div class="image-divider" style="background-image:url('images/divider3.webp')">
+  <span>Stačí si jen přát</span>
+</div>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="contact">
+  <div class="container">
+    <h3>Kontakt</h3>
+    <p>Poptávka je nezávazná. Odpovídáme co nejdříve.</p>
+    <div class="contact-info">
+      <p><strong>Adresa:</strong> Lovecká 2889/48, 466 01 Jablonec nad Nisou</p>
+      <p><strong>Telefon:</strong> <a href="tel:+420736743118">+420 736 743 118</a></p>
+      <p><strong>E-mail:</strong> <a href="mailto:beran.tesarstvi@gmail.com">beran.tesarstvi@gmail.com</a></p>
+    </div>
+    <form>
+      <input type="text" placeholder="Vaše jméno" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" placeholder="Telefon">
+      <textarea placeholder="Popište váš projekt"></textarea>
+      <button type="submit">Odeslat poptávku</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="images/logo.webp" alt="Tesařství BERAN" class="footer-logo" loading="lazy">
+    <p class="footer-text">
+      Tesařství BERAN<br>
+      Lovecká 2889/48, 466 01 Jablonec nad Nisou
+    </p>
+
+    <p class="footer-contact">
+      <a href="tel:+420736743118">+420 736 743 118</a><br>
+      <a href="mailto:beran.tesarstvi@gmail.com">beran.tesarstvi@gmail.com</a>
+    </p>
+
+    <p class="footer-social">
+      <a href="https://www.instagram.com/beran_na_strese/" target="_blank" rel="noopener">
+        Instagram: @beran_na_strese
+      </a>
+    </p>
+
+    <div class="footer-map">
+      <iframe
+        src="https://www.google.com/maps?q=Loveck%C3%A1%202889%2F48%2C%20Jablonec%20nad%20Nisou&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="footer-copy">© Tesařství BERAN</p>
+  </div>
+</footer>
 
 <script>
 function openLightbox(img){
